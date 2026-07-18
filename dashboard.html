@@ -10,11 +10,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --accent-main: #4f46e5; /* Indigo Accent */
-            --dark-bg: #0f172a;     /* Slate Dark Charcoal */
+            /* Vibrant Sunset Theme */
+            --accent-main: #f97316;    /* Vibrant Orange */
+            --accent-dark: #ea580c;    /* Deep Orange for hover */
+            --dark-bg: #1e293b;       /* Slate Dark Sidebar */
         }
         body { 
-            background-color: #ffffff; 
+            background-color: #fefcfb; 
             font-family: system-ui, -apple-system, sans-serif; 
         }
         .sidebar { 
@@ -53,7 +55,7 @@
             border-radius: 6px; 
         }
         .nav-link-custom.active, .nav-link-custom:hover { 
-            background-color: rgba(255,255,255,0.08); 
+            background-color: var(--accent-main); 
             color: white; 
         }
         .stat-card { 
@@ -64,7 +66,7 @@
             height: 100%; 
         }
         .stat-icon-box { 
-            background-color: rgba(79, 70, 229, 0.1); 
+            background-color: rgba(249, 115, 22, 0.15); 
             color: var(--accent-main); 
             width: 40px; 
             height: 40px; 
@@ -74,24 +76,22 @@
             justify-content: center; 
             font-size: 18px; 
         }
-        /* Donut Chart configured for 80% visual orientation */
         .chart-donut { 
             width: 130px; 
             height: 130px; 
-            border: 15px solid #f1f5f9; 
+            border: 15px solid #fff7ed; 
             border-top: 15px solid var(--accent-main); 
             border-right: 15px solid var(--accent-main); 
             border-bottom: 15px solid var(--accent-main); 
-            border-left: 15px solid #f1f5f9; 
+            border-left: 15px solid #fff7ed; 
             border-radius: 50%; 
             margin: 0 auto 15px; 
             transform: rotate(45deg);
         }
-        /* Avatar style for the profile footer */
         .avatar-circle {
             width: 32px;
             height: 32px;
-            background-color: rgba(255, 255, 255, 0.15);
+            background-color: var(--accent-main);
             color: white;
             border-radius: 50%;
             display: flex;
@@ -110,7 +110,7 @@
         <div class="col-md-3 col-lg-2 sidebar">
             <div>
                 <div class="sidebar-brand">
-                    <i class="fa-solid fa-graduation-cap text-white"></i>
+                    <i class="fa-solid fa-graduation-cap" style="color: var(--accent-main);"></i>
                     <span>Dorm Tenant<br><small style="font-size:11px; color:#64748b;">Management System</small></span>
                 </div>
                 
@@ -124,7 +124,6 @@
                 <a href="#" class="nav-link-custom"><i class="fa-solid fa-chart-simple"></i> Reports & Analytics</a>
             </div>
             
-            <!-- PROFILE WITH THE REQUESTED AVATAR CIRCLE AND LOGOUT -->
             <div class="pb-3 border-top border-secondary pt-3">
                 <div class="d-flex align-items-center gap-2 justify-content-center text-start mb-3">
                     <div class="avatar-circle">A</div>
@@ -138,93 +137,56 @@
         </div>
 
         <!-- MAIN CONTENT AREA -->
-        <div class="col-md-9 col-lg-10 p-4" style="background-color: #f8fafc;">
+        <div class="col-md-9 col-lg-10 p-4">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <div>
-                    <h2 class="fw-bold text-dark m-0" style="font-size: 24px;">Dorm Tenant Management System</h2>
-                    <p class="text-muted small m-0">Monitor occupancy, payments, contracts, and maintenance across all dormitories.</p>
+                    <h2 class="fw-bold text-dark m-0" style="font-size: 24px;">Dashboard</h2>
+                    <p class="text-muted small m-0">Welcome back, Admin!</p>
                 </div>
-                <span class="badge bg-dark p-2 text-uppercase">Admin Dashboard</span>
+                <span class="badge p-2 text-uppercase" style="background-color: var(--accent-main);">Admin Access</span>
             </div>
 
             <!-- CARDS STATS -->
             <div class="row g-3 mb-4">
                 <div class="col-6 col-md-3">
-                    <div class="stat-card d-flex justify-content-between align-items-start">
-                        <div>
-                            <span class="text-muted small fw-semibold">Occupancy Rate (%)</span>
-                            <h3 class="fw-bold text-dark my-1">80%</h3>
-                            <small class="text-success" style="font-size:11px;">8 of 10 rooms occupied</small>
+                    <div class="stat-card">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <span class="text-muted small fw-semibold">Occupancy Rate</span>
+                                <h3 class="fw-bold text-dark my-1">80%</h3>
+                            </div>
+                            <div class="stat-icon-box"><i class="fa-solid fa-hotel"></i></div>
                         </div>
-                        <div class="stat-icon-box"><i class="fa-solid fa-hotel"></i></div>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="stat-card d-flex justify-content-between align-items-start">
-                        <div>
-                            <span class="text-muted small fw-semibold">Pending Payments</span>
-                            <h3 class="fw-bold text-dark my-1">0</h3>
-                            <small class="text-muted" style="font-size:11px;">₱0 outstanding</small>
+                    <div class="stat-card">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <span class="text-muted small fw-semibold">Pending Payments</span>
+                                <h3 class="fw-bold text-dark my-1">0</h3>
+                            </div>
+                            <div class="stat-icon-box"><i class="fa-solid fa-wallet"></i></div>
                         </div>
-                        <div class="stat-icon-box"><i class="fa-solid fa-wallet"></i></div>
                     </div>
                 </div>
-                <div class="col-6 col-md-3">
-                    <div class="stat-card d-flex justify-content-between align-items-start">
-                        <div>
-                            <span class="text-muted small fw-semibold">Expiring Contracts</span>
-                            <h3 class="fw-bold text-dark my-1">0</h3>
-                            <small class="text-muted" style="font-size:11px;">Within next 30 days</small>
-                        </div>
-                        <div class="stat-icon-box"><i class="fa-solid fa-file-contract"></i></div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="stat-card d-flex justify-content-between align-items-start">
-                        <div>
-                            <span class="text-muted small fw-semibold">Open Tasks</span>
-                            <h3 class="fw-bold text-dark my-1">0</h3>
-                            <small class="text-muted" style="font-size:11px;">0 urgent tasks</small>
-                        </div>
-                        <div class="stat-icon-box"><i class="fa-solid fa-list-check"></i></div>
-                    </div>
-                </div>
+                <!-- Add other cards here -->
             </div>
 
             <div class="row g-4">
-                <!-- CLEARED TENANT DIRECTORY TABLE -->
                 <div class="col-lg-8">
-                    <div class="card p-3 border border-light shadow-sm bg-white" style="min-height: 250px;">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h5 class="fw-bold m-0 text-dark">Tenant Directory</h5>
-                            <button class="btn btn-sm text-white" style="background-color: var(--accent-main); font-size:12px;">+ Add Tenant</button>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table align-middle small mb-0">
-                                <thead class="table-light text-muted">
-                                    <tr>
-                                        <th>Tenant Name</th>
-                                        <th>Room</th>
-                                        <th>Category</th>
-                                        <th>Rent Status</th>
-                                    </tr>
-                                </thead>
-                            </table>
-                            <!-- Notification Empty State text -->
-                            <div class="text-center py-5 text-muted" style="font-size: 13px;">
-                                No tenants yet. Run seed_dorm_data.php once to load sample data, or add a tenant.
-                            </div>
-                        </div>
+                    <div class="card p-3 shadow-sm bg-white" style="border-radius: 12px;">
+                        <h5 class="fw-bold mb-3">Tenant Directory</h5>
+                        <button class="btn btn-sm text-white mb-3" style="background-color: var(--accent-main); width: 120px;">+ Add Tenant</button>
+                        <div class="text-center py-5 text-muted small">No tenants recorded yet.</div>
                     </div>
                 </div>
-
-                <!-- Occupancy Overview Details -->
                 <div class="col-lg-4">
-                    <div class="card p-3 border border-light shadow-sm text-center bg-white">
-                        <h5 class="fw-bold text-start text-dark mb-4">Occupancy Overview</h5>
+                    <div class="card p-3 shadow-sm bg-white text-center" style="border-radius: 12px;">
+                        <h5 class="fw-bold text-start mb-4">Occupancy Overview</h5>
                         <div class="chart-donut"></div>
                         <div class="d-flex justify-content-between small text-muted px-3">
-                            <span>Occupied Rooms: <strong>8</strong></span>
+                            <span>Occupied: <strong>8</strong></span>
                             <span>Vacant: <strong>2</strong></span>
                         </div>
                     </div>

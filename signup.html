@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            /* Sleek Indigo & Charcoal Theme Colors */
-            --accent-main: #4f46e5;  /* Indigo Accent */
-            --accent-dark: #4338ca;  /* Darker Indigo for Hover */
-            --body-bg: #0f172a;     /* Slate Dark Charcoal */
+            /* Vibrant Sunset Theme */
+            --accent-main: #f97316;    /* Vibrant Orange */
+            --accent-dark: #ea580c;    /* Deep Orange for Hover */
+            --body-bg: #1e293b;       /* Slate Dark Background */
         }
         body {
             background-color: var(--body-bg);
@@ -33,7 +33,7 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 12px 32px rgba(0,0,0,0.5);
-            padding: 45px 40px;
+            padding: 50px 40px;
         }
         .input-group-custom {
             position: relative;
@@ -56,7 +56,7 @@
         }
         .input-group-custom .form-control:focus {
             border-color: var(--accent-main);
-            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
         }
         .btn-custom {
             background-color: var(--accent-main);
@@ -149,7 +149,6 @@
         }
 
         if (name !== "" && email !== "" && pass !== "") {
-            // I-save ang account details sa browser storage
             localStorage.setItem('registeredEmail', email);
             localStorage.setItem('registeredPassword', pass);
 
@@ -159,4 +158,4 @@
     }
 </script>
 </body>
-</html>
+</html>git status

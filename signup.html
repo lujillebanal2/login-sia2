@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --maroon-dark: #4a1015;
-            --maroon-bright: #6b1d24;
-            --body-bg: #110507;
+            /* Sleek Indigo & Charcoal Theme Colors */
+            --accent-main: #4f46e5;  /* Indigo Accent */
+            --accent-dark: #4338ca;  /* Darker Indigo for Hover */
+            --body-bg: #0f172a;     /* Slate Dark Charcoal */
         }
         body {
             background-color: var(--body-bg);
@@ -43,18 +44,22 @@
             left: 15px;
             top: 50%;
             transform: translateY(-50%);
-            color: #999;
+            color: #94a3b8;
             font-size: 14px;
         }
         .input-group-custom .form-control {
             padding-left: 45px;
             height: 46px;
             border-radius: 10px;
-            border: 1px solid #ced4da;
-            background-color: #f8f9fa;
+            border: 1px solid #cbd5e1;
+            background-color: #f8fafc;
+        }
+        .input-group-custom .form-control:focus {
+            border-color: var(--accent-main);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
         }
         .btn-custom {
-            background-color: var(--maroon-bright);
+            background-color: var(--accent-main);
             color: white;
             height: 48px;
             border-radius: 10px;
@@ -65,11 +70,11 @@
             transition: background-color 0.2s;
         }
         .btn-custom:hover {
-            background-color: var(--maroon-dark);
+            background-color: var(--accent-dark);
         }
         .footer-text {
             font-size: 11px;
-            color: #b5acac;
+            color: #94a3b8;
             margin-top: 35px;
             text-align: center;
         }
@@ -121,7 +126,7 @@
 
     <div class="text-center small mt-4">
         <span class="text-muted">Already have an account?</span>
-        <a href="index.html" class="fw-bold text-decoration-none" style="color: var(--maroon-bright);">Login here</a>
+        <a href="index.html" class="fw-bold text-decoration-none" style="color: var(--accent-main);">Login here</a>
     </div>
 
     <div class="footer-text">

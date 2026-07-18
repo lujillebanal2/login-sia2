@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --maroon-dark: #4a1015;
-            --maroon-bright: #6b1d24;
-            --body-bg: #110507;
+            /* Sleek Indigo & Charcoal Theme Colors */
+            --accent-main: #4f46e5;  /* Indigo Accent */
+            --accent-dark: #4338ca;  /* Darker Indigo for Hover */
+            --body-bg: #0f172a;     /* Slate Dark Charcoal */
         }
         body {
             background-color: var(--body-bg);
@@ -35,7 +36,7 @@
             min-height: 520px;
         }
         .info-panel {
-            background: linear-gradient(135deg, #420d11, #240507);
+            background: linear-gradient(135deg, #1e1b4b, #0f172a); /* Matching Tech Gradient */
             color: #ffffff;
             padding: 40px;
             width: 40%;
@@ -62,7 +63,7 @@
         }
         .system-desc {
             font-size: 0.85rem;
-            color: #d1bcbc;
+            color: #94a3b8;
             line-height: 1.5;
             margin-bottom: 20px;
         }
@@ -74,7 +75,7 @@
             padding: 6px 12px;
             border-radius: 20px;
             font-size: 11px;
-            color: #00ff88;
+            color: #38bdf8; /* Cyan/Light Blue for Tech Accent */
             font-weight: 500;
             margin-bottom: 30px;
         }
@@ -82,7 +83,7 @@
             content: '';
             width: 6px;
             height: 6px;
-            background-color: #00ff88;
+            background-color: #38bdf8;
             border-radius: 50%;
         }
         .demo-section {
@@ -95,19 +96,19 @@
             font-size: 10px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: #a89494;
+            color: #64748b;
             margin-bottom: 10px;
             font-weight: 700;
         }
         .demo-card {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.06);
             border-radius: 10px;
             padding: 10px 15px;
             cursor: pointer;
             transition: background 0.2s;
         }
         .demo-card:hover {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.12);
         }
         .form-panel {
             width: 60%;
@@ -125,15 +126,19 @@
             left: 15px;
             top: 50%;
             transform: translateY(-50%);
-            color: #999;
+            color: #94a3b8;
             font-size: 14px;
         }
         .input-group-custom .form-control {
             padding-left: 45px;
             height: 48px;
             border-radius: 10px;
-            border: 1px solid #ced4da;
-            background-color: #f8f9fa;
+            border: 1px solid #cbd5e1;
+            background-color: #f8fafc;
+        }
+        .input-group-custom .form-control:focus {
+            border-color: var(--accent-main);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
         }
         .input-group-custom .toggle-password {
             position: absolute;
@@ -142,7 +147,7 @@
             cursor: pointer;
         }
         .btn-login {
-            background-color: var(--maroon-bright);
+            background-color: var(--accent-main);
             color: white;
             height: 48px;
             border-radius: 10px;
@@ -153,11 +158,11 @@
             transition: background-color 0.2s;
         }
         .btn-login:hover {
-            background-color: var(--maroon-dark);
+            background-color: var(--accent-dark);
         }
         .footer-text {
             font-size: 11px;
-            color: #b5acac;
+            color: #94a3b8;
             margin-top: 40px;
             text-align: center;
         }
@@ -189,7 +194,7 @@
                 Streamlined property management for educational institutions. Manage rooms, tenants, payments, and maintenance — all in one place.
             </div>
             <div class="module-badge">
-                Teen T-ITans - SIA2 Module 1
+                SIA2 Module 1
             </div>
         </div>
         
@@ -197,11 +202,11 @@
             <div class="demo-title">Quick Demo Login</div>
             <div class="demo-card mb-2" onclick="fillAdminDemo()">
                 <div class="small fw-bold">Admin Account</div>
-                <div style="font-size: 11px; color: #d1bcbc;">admin@dorm.edu</div>
+                <div style="font-size: 11px; color: #94a3b8;">admin@dorm.edu</div>
             </div>
             <div class="demo-card" onclick="fillTenantDemo()">
                 <div class="small fw-bold">Tenant Account</div>
-                <div style="font-size: 11px; color: #d1bcbc;">tenant@dorm.edu</div>
+                <div style="font-size: 11px; color: #94a3b8;">tenant@dorm.edu</div>
             </div>
         </div>
     </div>
@@ -236,7 +241,7 @@
                     <input class="form-check-input" type="checkbox" id="rememberCheck">
                     <label class="form-check-label text-secondary" for="rememberCheck">Remember Me</label>
                 </div>
-                <a href="forgot-password.html" class="text-decoration-none fw-semibold text-dark">Forgot Password?</a>
+                <a href="forgot-password.html" class="text-decoration-none fw-semibold" style="color: var(--accent-main);">Forgot Password?</a>
             </div>
 
             <button type="submit" class="btn-login shadow-sm">Login</button>
@@ -244,11 +249,11 @@
 
         <div class="text-center small mt-4">
             <span class="text-muted">Don't have an account?</span>
-            <a href="signup.html" class="fw-bold text-decoration-none" style="color: var(--maroon-bright);">Register here</a>
+            <a href="signup.html" class="fw-bold text-decoration-none" style="color: var(--accent-main);">Register here</a>
         </div>
 
         <div class="footer-text">
-            Dorm Tenant Rental Management System | Teen T-ITans
+            Dorm Tenant Rental Management System
         </div>
     </div>
 </div>

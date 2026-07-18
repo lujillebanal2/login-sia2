@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --maroon-main: #6b1d24;
-            --dark-bg: #110507;
+            --accent-main: #4f46e5; /* Indigo Accent */
+            --dark-bg: #0f172a;     /* Slate Dark Charcoal */
         }
         body { 
             background-color: #ffffff; 
@@ -37,13 +37,13 @@
         .menu-section-title { 
             font-size: 10px; 
             text-transform: uppercase; 
-            color: #6c757d; 
+            color: #64748b; 
             margin-top: 20px; 
             margin-bottom: 10px; 
             font-weight: bold; 
         }
         .nav-link-custom { 
-            color: #adb5bd; 
+            color: #94a3b8; 
             text-decoration: none; 
             display: flex; 
             align-items: center; 
@@ -53,19 +53,19 @@
             border-radius: 6px; 
         }
         .nav-link-custom.active, .nav-link-custom:hover { 
-            background-color: rgba(255,255,255,0.05); 
+            background-color: rgba(255,255,255,0.08); 
             color: white; 
         }
         .stat-card { 
-            border: 1px solid #e0e0e0; 
+            border: 1px solid #e2e8f0; 
             border-radius: 12px; 
             padding: 20px; 
             background: white; 
             height: 100%; 
         }
         .stat-icon-box { 
-            background-color: rgba(107, 29, 36, 0.1); 
-            color: var(--maroon-main); 
+            background-color: rgba(79, 70, 229, 0.1); 
+            color: var(--accent-main); 
             width: 40px; 
             height: 40px; 
             border-radius: 8px; 
@@ -78,11 +78,11 @@
         .chart-donut { 
             width: 130px; 
             height: 130px; 
-            border: 15px solid #e9ecef; 
-            border-top: 15px solid var(--maroon-main); 
-            border-right: 15px solid var(--maroon-main); 
-            border-bottom: 15px solid var(--maroon-main); 
-            border-left: 15px solid #e9ecef; 
+            border: 15px solid #f1f5f9; 
+            border-top: 15px solid var(--accent-main); 
+            border-right: 15px solid var(--accent-main); 
+            border-bottom: 15px solid var(--accent-main); 
+            border-left: 15px solid #f1f5f9; 
             border-radius: 50%; 
             margin: 0 auto 15px; 
             transform: rotate(45deg);
@@ -91,7 +91,7 @@
         .avatar-circle {
             width: 32px;
             height: 32px;
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.15);
             color: white;
             border-radius: 50%;
             display: flex;
@@ -111,7 +111,7 @@
             <div>
                 <div class="sidebar-brand">
                     <i class="fa-solid fa-graduation-cap text-white"></i>
-                    <span>Dorm Tenant<br><small style="font-size:11px; color:#aaa;">Management System</small></span>
+                    <span>Dorm Tenant<br><small style="font-size:11px; color:#64748b;">Management System</small></span>
                 </div>
                 
                 <div class="menu-section-title">Admin Functions</div>
@@ -127,9 +127,9 @@
             <!-- PROFILE WITH THE REQUESTED AVATAR CIRCLE AND LOGOUT -->
             <div class="pb-3 border-top border-secondary pt-3">
                 <div class="d-flex align-items-center gap-2 justify-content-center text-start mb-3">
-                    <div class="avatar-circle">L</div>
+                    <div class="avatar-circle">A</div>
                     <div>
-                        <div class="small fw-bold text-white lh-1">Lujille</div>
+                        <div class="small fw-bold text-white lh-1">Administrator</div>
                         <div class="text-muted" style="font-size: 11px;">admin@university.edu</div>
                     </div>
                 </div>
@@ -138,7 +138,7 @@
         </div>
 
         <!-- MAIN CONTENT AREA -->
-        <div class="col-md-9 col-lg-10 p-4" style="background-color: #fcfcfc;">
+        <div class="col-md-9 col-lg-10 p-4" style="background-color: #f8fafc;">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <div>
                     <h2 class="fw-bold text-dark m-0" style="font-size: 24px;">Dorm Tenant Management System</h2>
@@ -147,7 +147,7 @@
                 <span class="badge bg-dark p-2 text-uppercase">Admin Dashboard</span>
             </div>
 
-            <!-- CARDS STATS (Binago lang ang mga to para maging 0 at 80%) -->
+            <!-- CARDS STATS -->
             <div class="row g-3 mb-4">
                 <div class="col-6 col-md-3">
                     <div class="stat-card d-flex justify-content-between align-items-start">
@@ -197,7 +197,7 @@
                     <div class="card p-3 border border-light shadow-sm bg-white" style="min-height: 250px;">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h5 class="fw-bold m-0 text-dark">Tenant Directory</h5>
-                            <button class="btn btn-sm text-white" style="background-color: var(--maroon-main); font-size:12px;">+ Add Tenant</button>
+                            <button class="btn btn-sm text-white" style="background-color: var(--accent-main); font-size:12px;">+ Add Tenant</button>
                         </div>
                         <div class="table-responsive">
                             <table class="table align-middle small mb-0">

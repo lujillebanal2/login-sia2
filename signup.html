@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dorm Tenant Rental Management System - Register</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Input Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --maroon-dark: #4a1015;
+            --maroon-bright: #6b1d24;
+            --body-bg: #110507;
+        }
+        body {
+            background-color: var(--body-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 15px;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .auth-container {
+            display: flex;
+            width: 100%;
+            max-width: 550px;
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+            padding: 45px 40px;
+        }
+        .input-group-custom {
+            position: relative;
+            margin-bottom: 18px;
+        }
+        .input-group-custom i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 14px;
+        }
+        .input-group-custom .form-control {
+            padding-left: 45px;
+            height: 46px;
+            border-radius: 10px;
+            border: 1px solid #ced4da;
+            background-color: #f8f9fa;
+        }
+        .btn-custom {
+            background-color: var(--maroon-bright);
+            color: white;
+            height: 48px;
+            border-radius: 10px;
+            font-weight: 600;
+            border: none;
+            width: 100%;
+            margin-top: 10px;
+            transition: background-color 0.2s;
+        }
+        .btn-custom:hover {
+            background-color: var(--maroon-dark);
+        }
+        .footer-text {
+            font-size: 11px;
+            color: #b5acac;
+            margin-top: 35px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="auth-container d-flex flex-column justify-content-center">
+    <div class="mb-4 text-center">
+        <h3 class="fw-bold text-dark m-0">Create Account</h3>
+        <p class="text-muted small mt-1">Join the Dorm Tenant Rental Management System</p>
+    </div>
+
+    <form onsubmit="executeSignup(event)">
+        <div class="mb-2">
+            <label class="form-label small fw-semibold text-secondary">Full Name</label>
+            <div class="input-group-custom">
+                <i class="fa-regular fa-user"></i>
+                <input type="text" class="form-control" id="nameInput" placeholder="Enter your full name" required>
+            </div>
+        </div>
+
+        <div class="mb-2">
+            <label class="form-label small fw-semibold text-secondary">Email Address</label>
+            <div class="input-group-custom">
+                <i class="fa-regular fa-envelope"></i>
+                <input type="email" class="form-control" id="emailInput" placeholder="Enter your email address" required>
+            </div>
+        </div>
+
+        <div class="mb-2">
+            <label class="form-label small fw-semibold text-secondary">Password</label>
+            <div class="input-group-custom">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" class="form-control" id="passInput" placeholder="Create a password" required>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label small fw-semibold text-secondary">Confirm Password</label>
+            <div class="input-group-custom">
+                <i class="fa-solid fa-shield-halved"></i>
+                <input type="password" class="form-control" id="confirmPassInput" placeholder="Repeat your password" required>
+            </div>
+        </div>
+
+        <button type="submit" class="btn-custom shadow-sm">Register</button>
+    </form>
+
+    <div class="text-center small mt-4">
+        <span class="text-muted">Already have an account?</span>
+        <a href="login.html" class="fw-bold text-decoration-none" style="color: var(--maroon-bright);">Login here</a>
+    </div>
+
+    <div class="footer-text">
+        Dorm Tenant Rental Management System | Teen T-ITans
+    </div>
+</div>
+
+<script>
+    function executeSignup(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById('nameInput').value.trim();
+        const email = document.getElementById('emailInput').value.trim();
+        const pass = document.getElementById('passInput').value.trim();
+        const confirmPass = document.getElementById('confirmPassInput').value.trim();
+        
+        if (pass !== confirmPass) {
+            alert("Maling kumpirmasyon! Hindi magkatugma ang password.");
+            return;
+        }
+
+        if (name !== "" && email !== "" && pass !== "") {
+            // I-save ang account details sa browser storage
+            localStorage.setItem('registeredEmail', email);
+            localStorage.setItem('registeredPassword', pass);
+
+            alert("Matagumpay na nakapag-rehistro! Maaari ka nang mag-login gamit ang iyong bagong account.");
+            window.location.href = "login.html";
+        }
+    }
+</script>
+</body>
+</html>

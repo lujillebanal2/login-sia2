@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dorm Tenant Rental Management System - Login</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for Input Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --maroon-dark: #4a1015;
+            --maroon-bright: #6b1d24;
+            --body-bg: #110507;
+        }
+        body {
+            background-color: var(--body-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 15px;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .auth-container {
+            display: flex;
+            width: 100%;
+            max-width: 960px;
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+            min-height: 520px;
+        }
+        .info-panel {
+            background: linear-gradient(135deg, #420d11, #240507);
+            color: #ffffff;
+            padding: 40px;
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .logo-box {
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+        .system-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 15px;
+        }
+        .system-desc {
+            font-size: 0.85rem;
+            color: #d1bcbc;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .module-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.08);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            color: #00ff88;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+        .module-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background-color: #00ff88;
+            border-radius: 50%;
+        }
+        .demo-section {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 15px;
+        }
+        .demo-title {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #a89494;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .demo-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .demo-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        .form-panel {
+            width: 60%;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .input-group-custom {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .input-group-custom i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 14px;
+        }
+        .input-group-custom .form-control {
+            padding-left: 45px;
+            height: 48px;
+            border-radius: 10px;
+            border: 1px solid #ced4da;
+            background-color: #f8f9fa;
+        }
+        .input-group-custom .toggle-password {
+            position: absolute;
+            right: 15px;
+            left: auto;
+            cursor: pointer;
+        }
+        .btn-login {
+            background-color: var(--maroon-bright);
+            color: white;
+            height: 48px;
+            border-radius: 10px;
+            font-weight: 600;
+            border: none;
+            width: 100%;
+            margin-top: 10px;
+            transition: background-color 0.2s;
+        }
+        .btn-login:hover {
+            background-color: var(--maroon-dark);
+        }
+        .footer-text {
+            font-size: 11px;
+            color: #b5acac;
+            margin-top: 40px;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .auth-container {
+                flex-direction: column;
+            }
+            .info-panel, .form-panel {
+                width: 100%;
+                padding: 30px 20px;
+            }
+            .info-panel {
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="auth-container">
+    <!-- LEFT PANEL -->
+    <div class="info-panel">
+        <div>
+            <div class="logo-box">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="system-title">Dorm Tenant Rental<br>Management System</div>
+            <div class="system-desc">
+                Streamlined property management for educational institutions. Manage rooms, tenants, payments, and maintenance — all in one place.
+            </div>
+            <div class="module-badge">
+                Teen T-ITans - SIA2 Module 1
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <div class="demo-title">Quick Demo Login</div>
+            <div class="demo-card mb-2" onclick="fillAdminDemo()">
+                <div class="small fw-bold">Admin Account</div>
+                <div style="font-size: 11px; color: #d1bcbc;">admin@dorm.edu</div>
+            </div>
+            <div class="demo-card" onclick="fillTenantDemo()">
+                <div class="small fw-bold">Tenant Account</div>
+                <div style="font-size: 11px; color: #d1bcbc;">tenant@dorm.edu</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="form-panel">
+        <div class="mb-4">
+            <h3 class="fw-bold text-dark m-0">Welcome Back</h3>
+            <p class="text-muted small">Sign in to access your dashboard</p>
+        </div>
+
+        <form onsubmit="executeLogin(event)">
+            <div class="mb-3">
+                <label class="form-label small fw-semibold text-secondary">Username or Email Address</label>
+                <div class="input-group-custom">
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" class="form-control" id="userInput" placeholder="Enter username or email address" required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label small fw-semibold text-secondary">Password</label>
+                <div class="input-group-custom">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" class="form-control" id="passInput" placeholder="Enter your password" required>
+                    <i class="fa-regular fa-eye toggle-password" onclick="togglePasswordVisibility()"></i>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-4" style="font-size: 13px;">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="rememberCheck">
+                    <label class="form-check-label text-secondary" for="rememberCheck">Remember Me</label>
+                </div>
+                <a href="forgot-password.html" class="text-decoration-none fw-semibold text-dark">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="btn-login shadow-sm">Login</button>
+        </form>
+
+        <div class="text-center small mt-4">
+            <span class="text-muted">Don't have an account?</span>
+            <a href="signup.html" class="fw-bold text-decoration-none" style="color: var(--maroon-bright);">Register here</a>
+        </div>
+
+        <div class="footer-text">
+            Dorm Tenant Rental Management System | Teen T-ITans
+        </div>
+    </div>
+</div>
+
+<script>
+    function fillAdminDemo() {
+        document.getElementById('userInput').value = "admin@dorm.edu";
+        document.getElementById('passInput').value = "Hrm@2026!";
+    }
+
+    function fillTenantDemo() {
+        document.getElementById('userInput').value = "tenant@dorm.edu";
+        document.getElementById('passInput').value = "Tenant@2026!";
+    }
+
+    function togglePasswordVisibility() {
+        const passInput = document.getElementById('passInput');
+        const eyeIcon = document.querySelector('.toggle-password');
+        if (passInput.type === "password") {
+            passInput.type = "text";
+            eyeIcon.classList.replace('fa-eye', 'fa-eye-slash');
+        } else {
+            passInput.type = "password";
+            eyeIcon.classList.replace('fa-eye-slash', 'fa-eye');
+        }
+    }
+
+    function executeLogin(event) {
+        event.preventDefault();
+        
+        const user = document.getElementById('userInput').value.trim();
+        const pass = document.getElementById('passInput').value.trim();
+        
+        const savedEmail = localStorage.getItem('registeredEmail');
+        const savedPass = localStorage.getItem('registeredPassword');
+        
+        const isAdminValid = (user === "admin@dorm.edu" && pass === "Hrm@2026!");
+        const isTenantValid = (user === "tenant@dorm.edu" && pass === "Tenant@2026!");
+        const isNewUserValid = (savedEmail && user === savedEmail && pass === savedPass);
+
+        if (isAdminValid || isTenantValid || isNewUserValid) {
+            window.location.href = "dashboard.html";
+        } else {
+            alert("Maling email o password! Pakisuri ang nilagay na detalye.");
+        }
+    }
+</script>
+</body>
+</html>
